@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Select Primary Category
- * Description: Add's a custom option in the post publishing page to select a Primary category for a post.
+ * Description: Choose a Primary Category for your posts.
  * Text Domain: select-primary-category
  * Plugin URI:
  * Version: 1.0

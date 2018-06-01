@@ -28,7 +28,7 @@ class Primary_Category {
 			'primary_category',
 			null,
 			array(
-				'label'   => __( 'Primary Category' ),
+				'label'   => __( 'Primary Category', 'select-primary-category' ),
 				'rewrite' => array( 'slug' => 'primary' ),
 			)
 		);

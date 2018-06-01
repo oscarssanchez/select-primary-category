@@ -37,8 +37,24 @@ class Category_Meta_Box {
 
 	/**
 	 * Render the Primary Category Meta Box.
+	 *
+	 * Uses logic from AMP for WordPress plugin: AMP_Post_Meta_Box::render_status().
+	 *
+	 * @param object $post post.
 	 */
-	public function render_primary_category_meta_box() {
+	public function render_primary_category_meta_box( $post ) {
+		$verify = (
+			isset( $post->ID )
+			&&
+			is_post_type_viewable( $post->post_type )
+			&&
+			current_user_can( 'edit_post', $post->ID )
+		);
+
+		if ( true !== $verify ) {
+			return;
+		}
+
 		$primary_cat = get_the_terms( get_the_ID(), 'primary_category' );
 		include_once dirname( __DIR__ ) . '/templates/admin/primary-category-meta-box.php';
 	}
@@ -49,7 +65,15 @@ class Category_Meta_Box {
 	 * @param int $post_id The current post ID.
 	 */
 	public function save_primary_category( $post_id ) {
-		if ( isset( $_POST['primary_category_name'] ) ) {
+		$verify = (
+			isset( $_POST['primary_category_name'], $_POST[ self::NONCE_NAME ], $_POST[ self::NONCE_ACTION ] )
+			&&
+			wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ self::NONCE_NAME ], self::NONCE_ACTION ) ) )
+			&&
+			current_user_can( 'edit_post', $post_id )
+		);
+
+		if ( true === $verify ) {
 			wp_set_post_terms(
 				$post_id,
 				sanitize_text_field( wp_unslash( $_POST['primary_category_name'] ) ),
