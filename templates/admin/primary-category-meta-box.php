@@ -19,7 +19,7 @@ if ( ! ( $this instanceof Category_Meta_Box ) ) {
  */
 ?>
 <div class="misc-pub-section">
-	<?php esc_html_e( 'Primary Category: ', 'select-primary-category' ); ?>
+	<span class="dashicons dashicons-networking"></span><?php esc_html_e( ' Primary Category: ', 'select-primary-category' ); ?>
 	<strong>
 		<?php
 		if ( isset( $primary_cat[0]->name ) ) {
