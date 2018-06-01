@@ -25,7 +25,7 @@ if ( ! ( $this instanceof Category_Meta_Box ) ) {
 		if ( isset( $primary_cat[0]->name ) ) {
 			echo esc_html( $primary_cat[0]->name );
 		} else {
-			echo esc_html_e( 'Not set', 'select-primary-category' );
+			esc_html_e( 'Not set', 'select-primary-category' );
 		}
 		?>
 	</strong>

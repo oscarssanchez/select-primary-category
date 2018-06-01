@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kienstra/post-category.git"
+    "url": "git+https://github.com/oscarssanchez/select-primary-category.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kienstra/post-category/issues"
+    "url": "https://github.com/oscarssanchez/select-primary-category/issues"
   },
-  "homepage": "https://github.com/kienstra/post-category#readme"
+  "homepage": "https://github.com/oscarssanchez/select-primary-category#readme"
 }

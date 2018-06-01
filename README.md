@@ -18,7 +18,7 @@ Choose the main category for your posts.
 
 ### Add/edit screen post.
 
-![Select an image, add text, and choose a link.](assets/screenshots/screenshot-1.png)
+![Select an image, add text, and choose a link.](assets/screenshots/screenshot-2.png)
 
 ## Installation ##
 
