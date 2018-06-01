@@ -14,7 +14,7 @@
 	-->
 
 	<rule ref="PHPCompatibility"/>
-	<config name="testVersion" value="5.2-"/>
+	<config name="testVersion" value="5.4-"/>
 
 	<arg name="extensions" value="php"/>
 
