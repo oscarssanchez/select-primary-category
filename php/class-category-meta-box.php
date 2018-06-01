@@ -66,9 +66,9 @@ class Category_Meta_Box {
 	 */
 	public function save_primary_category( $post_id ) {
 		$verify = (
-			isset( $_POST['primary_category_name'], $_POST[ self::NONCE_NAME ], $_POST[ self::NONCE_ACTION ] )
+			isset( $_POST['primary_category_name'], $_POST[ self::NONCE_NAME ] )
 			&&
-			wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ self::NONCE_NAME ], self::NONCE_ACTION ) ) )
+			wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ self::NONCE_NAME ] ) ), self::NONCE_ACTION )
 			&&
 			current_user_can( 'edit_post', $post_id )
 		);
