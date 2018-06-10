@@ -68,6 +68,8 @@ class Category_Meta_Box {
 		$verify = (
 			isset( $_POST['primary_category_name'], $_POST[ self::NONCE_NAME ] )
 			&&
+			'--Select Category--' !== $_POST['primary_category_name']
+			&&
 			wp_verify_nonce( sanitize_key( wp_unslash( $_POST[ self::NONCE_NAME ] ) ), self::NONCE_ACTION )
 			&&
 			current_user_can( 'edit_post', $post_id )
